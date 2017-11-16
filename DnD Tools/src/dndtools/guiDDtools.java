@@ -251,12 +251,23 @@ public class guiDDtools extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-         if(!guiDDtools.jCheckBox1.isSelected() && !guiDDtools.jCheckBox2.isSelected() && !guiDDtools.jCheckBox3.isSelected() && !guiDDtools.jCheckBox4.isSelected() && !guiDDtools.jCheckBox5.isSelected() && !guiDDtools.jCheckBox2.isSelected()) 
+         if(!guiDDtools.jCheckBox1.isSelected() && !guiDDtools.jCheckBox2.isSelected() && !guiDDtools.jCheckBox3.isSelected() && !guiDDtools.jCheckBox4.isSelected() && !guiDDtools.jCheckBox5.isSelected() && !guiDDtools.jCheckBox6.isSelected()) 
              JOptionPane.showMessageDialog(this, "Devi selezionare almeno una rarità. Altrimenti cosa sorteggio?","Messaggio d'errore", JOptionPane.ERROR_MESSAGE);
          else if(filechooser.path.equals(""))
              JOptionPane.showMessageDialog(this, "Non è stata selezionata la cartella dove sono presenti i files Excel degli items.\nPremi sulla voce Menu e successivamente su Seleziona Cartella Oggetti Magici","Messaggio d'errore", JOptionPane.ERROR_MESSAGE);
          else
-            DnDTools.randomItem((Integer)jSpinner1.getValue());
+         {
+            //DnDTools.randomItem((Integer)jSpinner1.getValue());
+             try
+             {
+                 //DnDTools.readExcel("lista-tier-1.xlsx");
+                 DnDTools.randomItem((Integer)jSpinner1.getValue());
+             }
+             catch (Exception e)
+             {
+                 e.printStackTrace();
+             }
+         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
@@ -355,7 +366,7 @@ public class guiDDtools extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     protected static javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable2;
+    protected static javax.swing.JTable jTable2;
     private javax.swing.JPanel parentPanel;
     // End of variables declaration//GEN-END:variables
 }
