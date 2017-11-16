@@ -41,17 +41,25 @@ public class filechooser extends javax.swing.JFrame {
   
     
     
-    public void savepath() throws Exception
+    public void savepath()
     {
+        try
+        {
         FileOutputStream path = new FileOutputStream("pathsaved.txt");
         PrintStream scrivi = new PrintStream(path);
         
-         scrivi.println(jTextField1.getText());
+        scrivi.println(jTextField1.getText());
+        
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
          
         
     }
     
-    public void loadpath() 
+    public static void loadpath() 
     {
         try
         {
@@ -63,7 +71,13 @@ public class filechooser extends javax.swing.JFrame {
          while(true) {
                 String s = q.readLine();
                 //System.out.println(s);
-                if (i==0) jTextField1.setText(s);
+                if (i==0){
+                    System.out.println("loadpath = " + s);
+//                    jTextField1.setText(s);
+                   if(s!=null)
+                    DnDTools.path=s;
+                    System.out.println("DnDTools.path="+DnDTools.path);
+                }
                 //else if(i==1) jTextField2.setText(s);
                 //System.out.println(".."+s+"...");
                 
@@ -72,11 +86,11 @@ public class filechooser extends javax.swing.JFrame {
                 i++; 
                  
             }
-         jLabel3.setText("Caricamento effettuato dal file pathsaved.txt");
+//         jLabel3.setText("Caricamento effettuato dal file pathsaved.txt");
         }
         catch(Exception e)
         {
-            jLabel3.setText("File pathsaved.txt non trovato");
+           // jLabel3.setText("File pathsaved.txt non trovato");
            
             //JOptionPane.showMessageDialog(null, "File pathsaved.txt non trovato in C:\\Quiz Archittettura", "Avviso", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
@@ -115,7 +129,7 @@ public class filechooser extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic", 1, 13)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("Seleziona  il percorso del file della cartella Architettura V1.x");
+        jLabel1.setText("Seleziona  il percorso del file della cartella Oggetti Magici");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,7 +173,7 @@ public class filechooser extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
             .addComponent(jSeparator1)
         );
         jPanel1Layout.setVerticalGroup(
@@ -194,57 +208,55 @@ public class filechooser extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        savepath();
+        guiDDtools.jLabel3.setText("Percorso oggetti magici: " + DnDTools.path);
+        this.dispose();
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-         try
-         {
-                       UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-         }
-         catch(Exception e){ 
-          
-             e.printStackTrace();
-         
-         }
-         
-        
-        
+
         try
         {
-        JFileChooser chooser= new JFileChooser();
-        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        
-        if(chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
-               {
-                   //System.out.println("Prova = " + PATH);
-                       jTextField1.setText(""+chooser.getSelectedFile());
-                       path=""+chooser.getSelectedFile();
-                       //System.out.println("Prova = "+i.PATH);
-                       
-               }
-               else
-               {
-                       System.out.println("Operazione annullata");
-               }
-  
-       
-   
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         }
-         catch(Exception e)
+        catch(Exception e){
+
+            e.printStackTrace();
+
+        }
+
+        try
+        {
+            JFileChooser chooser= new JFileChooser();
+            chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+
+            if(chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
+            {
+                //System.out.println("Prova = " + PATH);
+                jTextField1.setText(""+chooser.getSelectedFile());
+                DnDTools.path=""+chooser.getSelectedFile();
+                //System.out.println("Prova = "+i.PATH);
+
+            }
+            else
+            {
+                System.out.println("Operazione annullata");
+            }
+
+        }
+        catch(Exception e)
         {
             JOptionPane.showMessageDialog(null, "File non selezionato correttamente", "Error", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-            this.dispose();
-            
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,6 +289,7 @@ public class filechooser extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
             }
         });
     }
@@ -285,9 +298,9 @@ public class filechooser extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private static javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
+    private static javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

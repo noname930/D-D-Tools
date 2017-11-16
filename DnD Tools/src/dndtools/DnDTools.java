@@ -24,7 +24,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
  * @author Utente
  */
 public class DnDTools {
-
+    
+    protected static String path="";
     /**
      * @param numero_item
      */
@@ -86,7 +87,7 @@ public class DnDTools {
             {   
                 String c1="",c2="",c3="",c4="",c5="",c6="";
                 int n_colonna=0, n_righe=0;
-                InputStream ExcelFileToRead = new FileInputStream(filechooser.path+"\\"+nomefile);
+                InputStream ExcelFileToRead = new FileInputStream(path+"\\"+nomefile);
 		XSSFWorkbook  wb = new XSSFWorkbook(ExcelFileToRead);
 		
 		XSSFWorkbook test = new XSSFWorkbook(); 
@@ -94,7 +95,13 @@ public class DnDTools {
 		XSSFSheet sheet = wb.getSheetAt(0);
 		XSSFRow row; 
 		XSSFCell cell;
-
+                
+                int n=sheet.getPhysicalNumberOfRows();
+                int randomNum=ThreadLocalRandom.current().nextInt(3, n + 1);
+                
+                
+               // System.out.println("n_righe:"+n + "nrand="+randomNum);
+                
 		Iterator rows = sheet.rowIterator();
 
 		while (rows.hasNext())
@@ -102,16 +109,19 @@ public class DnDTools {
                         
 			row=(XSSFRow) rows.next();
 			Iterator cells = row.cellIterator();
-			while (cells.hasNext())
-			{
+                        
+                        if(n_righe==randomNum)
+                        {
+                            while (cells.hasNext())
+                            {   
+                           
 				cell=(XSSFCell) cells.next();
                                 
                             if(n_righe>2)
+                            {
 				if (cell.getCellType() == XSSFCell.CELL_TYPE_STRING)
 				{       
-                                        
-					//System.out.print(n_colonna + "=>" + cell.getStringCellValue()+" ");
-                                        
+                                                            
                                         if (n_colonna==1)
                                             c1=cell.getStringCellValue();
                                         else if(n_colonna==2)
@@ -135,15 +145,17 @@ public class DnDTools {
 				{
 					//U Can Handel Boolean, Formula, Errors
 				}
+                            }
                                 
                                 n_colonna++;
-			}
+                            }
+                        }
                        // System.out.println("Riempio con: " + c1 + c2 + c3 + c4 + c5);
-                       if(n_righe>2)
+                       if(n_righe==randomNum)
                         riempi_Tabella(c1,c2,c3,c4,c5,c6);
                        
                        
-			System.out.println();
+			//System.out.println();
                         n_colonna=0;
                         n_righe++;
 		}
@@ -172,9 +184,10 @@ public class DnDTools {
      
     public static void main(String[] args) {
         // TODO code application logic here
-       
+       filechooser.loadpath();
         guiDDtools main= new guiDDtools();
         main.setVisible(true);
+       
     }
     
 }

@@ -6,6 +6,7 @@
 package dndtools;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,6 +19,13 @@ public class guiDDtools extends javax.swing.JFrame {
      */
     public guiDDtools() {
         initComponents();
+        
+        if(!DnDTools.path.equals(""))
+            jLabel3.setText("Percorso oggetti magici: " + DnDTools.path);
+        else
+            jLabel3.setText("Il percorso degli oggetti magici non è stato selezionato.");
+  
+        
     }
 
     /**
@@ -47,9 +55,13 @@ public class guiDDtools extends javax.swing.JFrame {
         jSpinner1 = new javax.swing.JSpinner();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,6 +71,7 @@ public class guiDDtools extends javax.swing.JFrame {
         getContentPane().add(parentPanel, java.awt.BorderLayout.CENTER);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(900, 500));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -70,12 +83,15 @@ public class guiDDtools extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable2);
 
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 21, 595, 354));
+
         jCheckBox1.setText("Rarità 1");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 137, -1, -1));
 
         jCheckBox2.setText("Rarità 2");
         jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -83,8 +99,10 @@ public class guiDDtools extends javax.swing.JFrame {
                 jCheckBox2ActionPerformed(evt);
             }
         });
+        jPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 163, -1, -1));
 
         jCheckBox3.setText("Rarità 3");
+        jPanel1.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 189, -1, -1));
 
         jCheckBox4.setText("Rarità 4");
         jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
@@ -92,6 +110,7 @@ public class guiDDtools extends javax.swing.JFrame {
                 jCheckBox4ActionPerformed(evt);
             }
         });
+        jPanel1.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 215, -1, -1));
 
         jCheckBox5.setText("Rarità 5");
         jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
@@ -99,6 +118,7 @@ public class guiDDtools extends javax.swing.JFrame {
                 jCheckBox5ActionPerformed(evt);
             }
         });
+        jPanel1.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 241, -1, -1));
 
         jCheckBox6.setText("Rarità 6");
         jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
@@ -106,6 +126,7 @@ public class guiDDtools extends javax.swing.JFrame {
                 jCheckBox6ActionPerformed(evt);
             }
         });
+        jPanel1.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 267, -1, -1));
 
         jButton1.setText("Sorteggia!");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -113,12 +134,17 @@ public class guiDDtools extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
 
         jLabel1.setText("Seleziona le rarità degli oggetti che vuoi");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 21, -1, 23));
 
         jLabel2.setText("randomizzare:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 45, -1, -1));
 
         jLabel4.setText("Quantità di item:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
+        jPanel1.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 297, 101, -1));
 
         jButton2.setText("Seleziona tutto");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -126,6 +152,7 @@ public class guiDDtools extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 97, -1, -1));
 
         jButton3.setText("Deseleziona tutto");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -133,72 +160,18 @@ public class guiDDtools extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 97, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSpinner1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jCheckBox4)
-                            .addComponent(jCheckBox5)
-                            .addComponent(jCheckBox6)
-                            .addComponent(jButton1)
-                            .addComponent(jCheckBox1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)))
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel2)
-                        .addGap(38, 38, 38)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))
-                        .addGap(17, 17, 17)
-                        .addComponent(jCheckBox1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
-                        .addComponent(jButton1))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(125, Short.MAX_VALUE))
-        );
+        jButton4.setText("Reset");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 340, -1, -1));
+
+        jLabel3.setText(" ");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 381, 587, -1));
 
         jTabbedPane1.addTab("Oggetti Magici", jPanel1);
 
@@ -221,7 +194,18 @@ public class guiDDtools extends javax.swing.JFrame {
 
         jMenu1.setText("Menu");
 
-        jMenuItem1.setText("Seleziona cartella degli Oggetti Magici");
+        jMenuItem2.setText("Info");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("Impostazioni");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
+
+        jMenuItem1.setText("Seleziona la cartella degli oggetti magici");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -242,6 +226,7 @@ public class guiDDtools extends javax.swing.JFrame {
         {   
         filechooser frame = new filechooser();
         frame.setVisible(true);
+       // frame.loadpath();
         }
         catch(Exception e)
         {
@@ -251,9 +236,12 @@ public class guiDDtools extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+         
+        
+        
          if(!guiDDtools.jCheckBox1.isSelected() && !guiDDtools.jCheckBox2.isSelected() && !guiDDtools.jCheckBox3.isSelected() && !guiDDtools.jCheckBox4.isSelected() && !guiDDtools.jCheckBox5.isSelected() && !guiDDtools.jCheckBox6.isSelected()) 
              JOptionPane.showMessageDialog(this, "Devi selezionare almeno una rarità. Altrimenti cosa sorteggio?","Messaggio d'errore", JOptionPane.ERROR_MESSAGE);
-         else if(filechooser.path.equals(""))
+         else if(DnDTools.path.equals(""))
              JOptionPane.showMessageDialog(this, "Non è stata selezionata la cartella dove sono presenti i files Excel degli items.\nPremi sulla voce Menu e successivamente su Seleziona Cartella Oggetti Magici","Messaggio d'errore", JOptionPane.ERROR_MESSAGE);
          else
          {
@@ -310,6 +298,16 @@ public class guiDDtools extends javax.swing.JFrame {
         jCheckBox6.setSelected(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) guiDDtools.jTable2.getModel();
+        model.setRowCount(0);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -341,6 +339,9 @@ public class guiDDtools extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new guiDDtools().setVisible(true);
+               
+              
+                
             }
         });
     }
@@ -349,6 +350,7 @@ public class guiDDtools extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     protected static javax.swing.JCheckBox jCheckBox1;
     protected static javax.swing.JCheckBox jCheckBox2;
     protected static javax.swing.JCheckBox jCheckBox3;
@@ -357,10 +359,13 @@ public class guiDDtools extends javax.swing.JFrame {
     protected static javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    protected static javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
