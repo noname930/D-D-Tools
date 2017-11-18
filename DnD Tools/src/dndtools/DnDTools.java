@@ -11,9 +11,9 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -25,6 +25,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
  */
 public class DnDTools {
     
+    protected static guiDDtools main;
     protected static String path="";
     /**
      * @param numero_item
@@ -160,6 +161,11 @@ public class DnDTools {
                         n_righe++;
 		}
             }
+            catch (FileNotFoundException e)
+            {
+               JOptionPane.showMessageDialog(main, "Files Excel non trovati.\nControlla il percorso della cartella degli oggetti magici","Messaggio d'errore", JOptionPane.ERROR_MESSAGE);
+               e.printStackTrace();
+            }
             catch(Exception e)
             {
                 e.printStackTrace();
@@ -184,8 +190,8 @@ public class DnDTools {
      
     public static void main(String[] args) {
         // TODO code application logic here
-       filechooser.loadpath();
-        guiDDtools main= new guiDDtools();
+        filechooser.loadpath();
+        main= new guiDDtools();
         main.setVisible(true);
        
     }
