@@ -21,6 +21,8 @@ public class guiDDtools extends javax.swing.JFrame {
     public guiDDtools() {
         initComponents();
         
+        jPanel3.setVisible(false);
+        
         if(!DnDTools.path.equals(""))
             jLabel3.setText("Percorso oggetti magici: " + DnDTools.path);
         else
@@ -28,6 +30,25 @@ public class guiDDtools extends javax.swing.JFrame {
   
         
     }
+    
+    protected static void loadtextfields()
+    {
+        jTextField2.setText(Integer.toString(DnDTools.oggetti_rarità1[1] - DnDTools.oggetti_rarità1[0] + 1));
+        jTextField3.setText(Integer.toString(DnDTools.oggetti_rarità2[1] - DnDTools.oggetti_rarità2[0] + 1));
+        jTextField4.setText(Integer.toString(DnDTools.oggetti_rarità3[1] - DnDTools.oggetti_rarità3[0] + 1));
+        jTextField5.setText(Integer.toString(DnDTools.oggetti_rarità4[1] - DnDTools.oggetti_rarità4[0] + 1));
+        jTextField6.setText(Integer.toString(DnDTools.oggetti_rarità5[1] - DnDTools.oggetti_rarità5[0] + 1));
+        jTextField1.setText(Integer.toString(DnDTools.oggetti_rarità6[1] - DnDTools.oggetti_rarità6[0]));
+        
+        jTextField8.setText(Integer.toString(DnDTools.mostrolvl1[1] - DnDTools.mostrolvl1[0] + 1));
+        jTextField9.setText(Integer.toString(DnDTools.mostrolvl2[1] - DnDTools.mostrolvl2[0] + 1));
+        jTextField10.setText(Integer.toString(DnDTools.mostrolvl3[1] - DnDTools.mostrolvl3[0] + 1));
+        jTextField11.setText(Integer.toString(DnDTools.mostrolvl4[1] - DnDTools.mostrolvl4[0] + 1));
+        jTextField12.setText(Integer.toString(DnDTools.mostrolvl5[1] - DnDTools.mostrolvl5[0] + 1));
+        jTextField13.setText(Integer.toString(DnDTools.mostrolvl6[1] - DnDTools.mostrolvl6[0] + 1));
+        jTextField7.setText(Integer.toString(DnDTools.mostrolvl7[1] - DnDTools.mostrolvl7[0]));
+        
+    }   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -74,6 +95,55 @@ public class guiDDtools extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jSpinner2 = new javax.swing.JSpinner();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jSeparator7 = new javax.swing.JSeparator();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jSeparator8 = new javax.swing.JSeparator();
+        jSeparator9 = new javax.swing.JSeparator();
+        jSeparator10 = new javax.swing.JSeparator();
+        jSeparator11 = new javax.swing.JSeparator();
+        jSeparator12 = new javax.swing.JSeparator();
+        jSeparator13 = new javax.swing.JSeparator();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
+        jTextField12 = new javax.swing.JTextField();
+        jTextField13 = new javax.swing.JTextField();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -82,9 +152,10 @@ public class guiDDtools extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(900, 500));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         parentPanel.setLayout(new java.awt.CardLayout());
-        getContentPane().add(parentPanel, java.awt.BorderLayout.CENTER);
+        getContentPane().add(parentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 528, 907, -1));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(900, 500));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -347,7 +418,266 @@ public class guiDDtools extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Mostri", jPanel2);
 
-        getContentPane().add(jTabbedPane1, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 907, -1));
+
+        jPanel3.setBackground(new java.awt.Color(0, 60, 94));
+        jPanel3.setPreferredSize(new java.awt.Dimension(900, 500));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel5.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("INSERISCI LE PERCENTUALI PER I MOSTRI");
+        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("Mostro Leggendario :");
+        jPanel5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+
+        jSeparator7.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel5.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 210, 10));
+
+        jLabel22.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("Guardia Lvl 1 :");
+        jPanel5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("Soldato Lvl 2 :");
+        jPanel5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+
+        jLabel24.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setText("Soldato Elite Lvl 3 :");
+        jPanel5.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+
+        jLabel25.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("Generale Lvl 4 :");
+        jPanel5.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+
+        jLabel26.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("Commando Lvl 5 :");
+        jPanel5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+
+        jLabel27.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("Mostro Epico :");
+        jPanel5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+
+        jSeparator8.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel5.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 160, 10));
+
+        jSeparator9.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel5.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 200, 10));
+
+        jSeparator10.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel5.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 150, 10));
+
+        jSeparator11.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel5.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 150, 10));
+
+        jSeparator12.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel5.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 150, 10));
+
+        jSeparator13.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel5.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 140, 10));
+
+        jTextField7.setBackground(new java.awt.Color(0, 51, 102));
+        jTextField7.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField7.setBorder(null);
+        jPanel5.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 40, 20));
+
+        jTextField8.setBackground(new java.awt.Color(0, 51, 102));
+        jTextField8.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField8.setBorder(null);
+        jPanel5.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 40, 20));
+
+        jTextField9.setBackground(new java.awt.Color(0, 51, 102));
+        jTextField9.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField9.setBorder(null);
+        jPanel5.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 40, 20));
+
+        jTextField10.setBackground(new java.awt.Color(0, 51, 102));
+        jTextField10.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField10.setBorder(null);
+        jPanel5.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 40, 20));
+
+        jTextField11.setBackground(new java.awt.Color(0, 51, 102));
+        jTextField11.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField11.setBorder(null);
+        jPanel5.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 40, 20));
+
+        jTextField12.setBackground(new java.awt.Color(0, 51, 102));
+        jTextField12.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField12.setBorder(null);
+        jPanel5.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 40, 20));
+
+        jTextField13.setBackground(new java.awt.Color(0, 51, 102));
+        jTextField13.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField13.setBorder(null);
+        jPanel5.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 40, 20));
+
+        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, 300, 320));
+
+        jPanel6.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Rarità 6 :");
+        jPanel6.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel6.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 140, 20));
+
+        jTextField1.setBackground(new java.awt.Color(0, 51, 102));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField1.setBorder(null);
+        jPanel6.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 40, 20));
+
+        jLabel16.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Rarità 1 :");
+        jPanel6.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+
+        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel6.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 140, 10));
+
+        jTextField2.setBackground(new java.awt.Color(0, 51, 102));
+        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField2.setBorder(null);
+        jPanel6.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 40, 20));
+
+        jLabel17.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Rarità 2 :");
+        jPanel6.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+
+        jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel6.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 140, 20));
+
+        jTextField3.setBackground(new java.awt.Color(0, 51, 102));
+        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField3.setBorder(null);
+        jPanel6.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 40, 20));
+
+        jLabel18.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Rarità 3 :");
+        jPanel6.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+
+        jSeparator4.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel6.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 140, 20));
+
+        jTextField4.setBackground(new java.awt.Color(0, 51, 102));
+        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField4.setBorder(null);
+        jPanel6.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 40, 20));
+
+        jLabel19.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Rarità 4 :");
+        jPanel6.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+
+        jSeparator5.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel6.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 140, 20));
+
+        jTextField5.setBackground(new java.awt.Color(0, 51, 102));
+        jTextField5.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField5.setBorder(null);
+        jPanel6.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 40, 20));
+
+        jLabel20.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("Rarità 5 :");
+        jPanel6.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
+
+        jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel6.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 140, 20));
+
+        jTextField6.setBackground(new java.awt.Color(0, 51, 102));
+        jTextField6.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField6.setBorder(null);
+        jPanel6.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 40, 20));
+
+        jLabel8.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("INSERISCI LE PERCENTUALI PER GLI OGGETTI");
+        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 310, 330));
+
+        jPanel7.setBackground(new java.awt.Color(46, 52, 121));
+        jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel7MouseClicked(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Sitka Text", 0, 20)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("DONE");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addComponent(jLabel9)
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel9)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 230, 70));
+
+        jPanel4.setBackground(new java.awt.Color(0, 0, 46));
+        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel11.setFont(new java.awt.Font("Sitka Text", 0, 20)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("RESET");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addComponent(jLabel11)
+                .addContainerGap(82, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addGap(21, 21, 21))
+        );
+
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 230, 70));
+
+        jLabel12.setFont(new java.awt.Font("Bodoni MT", 0, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Puoi impostare le percentuali di drop riguardanti gli oggetti e le armi.");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 450));
 
         jMenu1.setText("Menu");
 
@@ -463,6 +793,19 @@ public class guiDDtools extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
+        try
+        {
+            DnDTools.openFiles();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        
+        jTabbedPane1.setVisible(false);
+        loadtextfields();
+        jPanel3.setVisible(true);
+        
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
@@ -512,35 +855,39 @@ public class guiDDtools extends javax.swing.JFrame {
         for(int i=0; i<(Integer)jSpinner2.getValue();i++)
         {
             int randomNum=ThreadLocalRandom.current().nextInt(0, 100 + 1);
+            
+             System.out.println(randomNum);
               
-             if(randomNum>=0 && randomNum<=35)
+             if( (randomNum>=DnDTools.mostrolvl1[0] && randomNum<=DnDTools.mostrolvl1[1]) && jCheckBox7.isSelected())
              {
-                 jTextArea1.setText(jTextArea1.getText() + "\n" + (i+1) + ") Guardia LV1\n");
+                 jTextArea1.setText(jTextArea1.getText() + (i+1) + ")Guardia LV1\n");
              }
-              else if(randomNum>=36 && randomNum<=58)
+              else if( (randomNum>=DnDTools.mostrolvl2[0] && randomNum<=DnDTools.mostrolvl2[1]) && jCheckBox8.isSelected() )
              {
-                 jTextArea1.setText(jTextArea1.getText() + "\n" +(i+1) + ") Soldato LV2\n");
+                 jTextArea1.setText(jTextArea1.getText() +(i+1) + ") Soldato LV2\n");
              }
-             else if (randomNum>=59 && randomNum<=73)
+             else if ( (randomNum>=DnDTools.mostrolvl3[0] && randomNum<=DnDTools.mostrolvl3[1]) && jCheckBox9.isSelected())
              {
-                 jTextArea1.setText(jTextArea1.getText() + "\n" +(i+1) + ") Soldato Elite LV3\n");
+                 jTextArea1.setText(jTextArea1.getText() +(i+1) + ") Soldato Elite LV3\n");
              }
-             else if(randomNum>=74 && randomNum<=83)
+             else if( (randomNum>=DnDTools.mostrolvl4[0] && randomNum<=DnDTools.mostrolvl4[1]) && jCheckBox10.isSelected())
              {
-                 jTextArea1.setText(jTextArea1.getText() + "\n" +(i+1) + ") Generale LV4\n");
+                 jTextArea1.setText(jTextArea1.getText()  +(i+1) + ") Generale LV4\n");
              }
-             else if (randomNum>=84 && randomNum<=91)
+             else if ( (randomNum>=DnDTools.mostrolvl5[0] && randomNum<=DnDTools.mostrolvl5[1]) && jCheckBox11.isSelected())
              {
-                 jTextArea1.setText(jTextArea1.getText() + "\n" +(i+1) + ") Commando LV5\n");
+                 jTextArea1.setText(jTextArea1.getText()  +(i+1) + ") Commando LV5\n");
              }
-              else if (randomNum >= 92 && randomNum <= 97)
+              else if ( (randomNum >= DnDTools.mostrolvl6[0] && randomNum <= DnDTools.mostrolvl6[1]) && jCheckBox12.isSelected())
              {
-                 jTextArea1.setText(jTextArea1.getText() + "\n" +(i+1) + ") Mostro Epico LV6\n");
+                 jTextArea1.setText(jTextArea1.getText()  +(i+1) + ") Mostro Epico LV6\n");
              }
-             else if (randomNum >= 98 && randomNum <= 100)
+             else if ((randomNum >= DnDTools.mostrolvl7[0] && randomNum <= DnDTools.mostrolvl7[1]) && jCheckBox13.isSelected())
              {
-                 jTextArea1.setText(jTextArea1.getText() + "\n" +(i+1) + ") Mostro Leggendario LV7\n");
+                 jTextArea1.setText(jTextArea1.getText()  +(i+1) + ") Mostro Leggendario LV7\n");
              }
+             else 
+                 i--;
         }
                
                
@@ -558,6 +905,32 @@ public class guiDDtools extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
+        // TODO add your handling code here:
+        if((Integer.parseInt(jTextField1.getText())) + (Integer.parseInt(jTextField2.getText())) + (Integer.parseInt(jTextField3.getText())) + (Integer.parseInt(jTextField4.getText())) + (Integer.parseInt(jTextField5.getText())) + (Integer.parseInt(jTextField6.getText()))  != 100)
+           JOptionPane.showMessageDialog(this, "La somma di tutte le percentuali degli oggetti\nsupera non è uguale 100%","Messaggio d'errore", JOptionPane.ERROR_MESSAGE);
+                 
+        else if ((Integer.parseInt(jTextField7.getText())) + (Integer.parseInt(jTextField8.getText())) + (Integer.parseInt(jTextField9.getText())) + (Integer.parseInt(jTextField10.getText())) + (Integer.parseInt(jTextField11.getText())) + (Integer.parseInt(jTextField12.getText())) + (Integer.parseInt(jTextField13.getText()))  != 100)
+           JOptionPane.showMessageDialog(this, "La somma di tutte le percentuali dei mostri\n non è uguale al 100%","Messaggio d'errore", JOptionPane.ERROR_MESSAGE);
+    
+        else
+        {   
+            DnDTools.salva_valori_utente();
+            try
+            {
+            DnDTools.openFiles();
+            }
+            catch(Exception e)
+            {
+                e.printStackTrace();
+                
+            }
+            jPanel3.setVisible(false);
+            jTabbedPane1.setVisible(true);
+        }
+        
+    }//GEN-LAST:event_jPanel7MouseClicked
 
     /**
      * @param args the command line arguments
@@ -619,11 +992,29 @@ public class guiDDtools extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox8;
     private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     protected static javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -631,13 +1022,44 @@ public class guiDDtools extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     protected static javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTabbedPane jTabbedPane1;
     protected static javax.swing.JTable jTable2;
     private javax.swing.JTextArea jTextArea1;
+    protected static javax.swing.JTextField jTextField1;
+    protected static javax.swing.JTextField jTextField10;
+    protected static javax.swing.JTextField jTextField11;
+    protected static javax.swing.JTextField jTextField12;
+    protected static javax.swing.JTextField jTextField13;
+    protected static javax.swing.JTextField jTextField2;
+    protected static javax.swing.JTextField jTextField3;
+    protected static javax.swing.JTextField jTextField4;
+    protected static javax.swing.JTextField jTextField5;
+    protected static javax.swing.JTextField jTextField6;
+    protected static javax.swing.JTextField jTextField7;
+    protected static javax.swing.JTextField jTextField8;
+    protected static javax.swing.JTextField jTextField9;
     private javax.swing.JPanel parentPanel;
     // End of variables declaration//GEN-END:variables
 }
