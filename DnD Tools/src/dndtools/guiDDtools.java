@@ -9,6 +9,7 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.concurrent.ThreadLocalRandom;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -30,6 +31,9 @@ public class guiDDtools extends javax.swing.JFrame {
             jLabel3.setText("Percorso oggetti magici: " + DnDTools.path);
         else
             jLabel3.setText("Il percorso degli oggetti magici non è stato selezionato.");
+        
+        
+        
   
         
     }
@@ -88,6 +92,7 @@ public class guiDDtools extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -104,6 +109,14 @@ public class guiDDtools extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jSpinner2 = new javax.swing.JSpinner();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -160,15 +173,19 @@ public class guiDDtools extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("D&D Tools");
-        setPreferredSize(new java.awt.Dimension(920, 500));
+        setPreferredSize(new java.awt.Dimension(915, 500));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         parentPanel.setLayout(new java.awt.CardLayout());
         getContentPane().add(parentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 528, 907, -1));
 
+        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(950, 500));
+        jPanel1.setLayout(null);
 
         jTable2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -181,12 +198,17 @@ public class guiDDtools extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable2);
 
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(274, 21, 595, 354);
+
         jCheckBox1.setBorder(null);
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jCheckBox1);
+        jCheckBox1.setBounds(10, 140, 13, 13);
 
         jCheckBox2.setBorder(null);
         jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -194,8 +216,12 @@ public class guiDDtools extends javax.swing.JFrame {
                 jCheckBox2ActionPerformed(evt);
             }
         });
+        jPanel1.add(jCheckBox2);
+        jCheckBox2.setBounds(10, 169, 13, 13);
 
         jCheckBox3.setBorder(null);
+        jPanel1.add(jCheckBox3);
+        jCheckBox3.setBounds(10, 198, 13, 13);
 
         jCheckBox4.setBorder(null);
         jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
@@ -203,6 +229,8 @@ public class guiDDtools extends javax.swing.JFrame {
                 jCheckBox4ActionPerformed(evt);
             }
         });
+        jPanel1.add(jCheckBox4);
+        jCheckBox4.setBounds(10, 227, 13, 13);
 
         jCheckBox5.setBorder(null);
         jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
@@ -210,6 +238,8 @@ public class guiDDtools extends javax.swing.JFrame {
                 jCheckBox5ActionPerformed(evt);
             }
         });
+        jPanel1.add(jCheckBox5);
+        jCheckBox5.setBounds(10, 257, 13, 13);
 
         jCheckBox6.setBorder(null);
         jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
@@ -217,6 +247,8 @@ public class guiDDtools extends javax.swing.JFrame {
                 jCheckBox6ActionPerformed(evt);
             }
         });
+        jPanel1.add(jCheckBox6);
+        jCheckBox6.setBounds(10, 286, 13, 13);
 
         jButton1.setText("Sorteggia!");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -224,18 +256,28 @@ public class guiDDtools extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(10, 361, 110, 23);
 
         jLabel1.setFont(new java.awt.Font("Californian FB", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Seleziona le rarità degli oggetti che vuoi");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(10, 21, 250, 23);
 
         jLabel2.setFont(new java.awt.Font("Californian FB", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("randomizzare:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(10, 45, 77, 17);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Quantità di item:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(10, 321, 92, 15);
+        jPanel1.add(jSpinner1);
+        jSpinner1.setBounds(127, 318, 80, 20);
 
         jButton2.setText("Seleziona tutto");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -243,6 +285,8 @@ public class guiDDtools extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton2);
+        jButton2.setBounds(10, 97, 120, 23);
 
         jButton3.setText("Deseleziona tutto");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -250,6 +294,8 @@ public class guiDDtools extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton3);
+        jButton3.setBounds(131, 97, 130, 23);
 
         jButton4.setText("Reset");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -257,197 +303,131 @@ public class guiDDtools extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton4);
+        jButton4.setBounds(134, 361, 100, 23);
 
         jLabel3.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText(" ");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(274, 381, 587, 20);
 
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Rarità 6");
+        jPanel1.add(jLabel13);
+        jLabel13.setBounds(30, 285, 80, 14);
 
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Rarità 1");
+        jPanel1.add(jLabel14);
+        jLabel14.setBounds(30, 140, 60, 14);
 
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Rarità 2");
+        jPanel1.add(jLabel15);
+        jLabel15.setBounds(30, 169, 60, 14);
 
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("Rarità 3");
+        jPanel1.add(jLabel28);
+        jLabel28.setBounds(30, 198, 70, 14);
 
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("Rarità 4");
+        jPanel1.add(jLabel29);
+        jLabel29.setBounds(30, 227, 70, 14);
 
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
         jLabel30.setText("Rarità 5");
+        jPanel1.add(jLabel30);
+        jLabel30.setBounds(30, 256, 70, 14);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(6, 6, 6)
-                        .addComponent(jButton3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel14))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jCheckBox2)
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel15))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jCheckBox3)
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel28))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jCheckBox4)
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel29))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jCheckBox5)
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel30))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jCheckBox6)
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel13))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(25, 25, 25)
-                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(41, 41, 41)
-                        .addComponent(jButton4)))
-                .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel2)
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jLabel14))
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jLabel15))
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jLabel28))
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox4)
-                            .addComponent(jLabel29))
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(jCheckBox5))
-                            .addComponent(jLabel30))
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jCheckBox6)
-                            .addComponent(jLabel13))
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jLabel4))
-                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addComponent(jButton4)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)))
-                .addGap(99, 99, 99))
-        );
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dndtools/wallpaper.jpg"))); // NOI18N
+        jPanel1.add(jLabel11);
+        jLabel11.setBounds(0, 0, 900, 500);
 
         jTabbedPane1.addTab("Oggetti Magici", jPanel1);
 
         jPanel2.setPreferredSize(new java.awt.Dimension(920, 500));
+        jPanel2.setLayout(null);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jScrollPane1.setViewportView(jTextArea1);
 
+        jPanel2.add(jScrollPane1);
+        jScrollPane1.setBounds(602, 37, 225, 354);
+
         jLabel5.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Seleziona la tipologia di mostri da sorteggiare.");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(10, 11, 627, 20);
 
-        jCheckBox7.setText("Guardia LV1");
+        jCheckBox7.setBorder(null);
         jCheckBox7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox7ActionPerformed(evt);
             }
         });
+        jPanel2.add(jCheckBox7);
+        jCheckBox7.setBounds(90, 90, 13, 13);
 
-        jCheckBox8.setText("Soldato LV2");
+        jCheckBox8.setBorder(null);
         jCheckBox8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox8ActionPerformed(evt);
             }
         });
+        jPanel2.add(jCheckBox8);
+        jCheckBox8.setBounds(90, 130, 13, 13);
 
-        jCheckBox9.setText("Soldato Elite LV3");
+        jCheckBox9.setBorder(null);
         jCheckBox9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox9ActionPerformed(evt);
             }
         });
+        jPanel2.add(jCheckBox9);
+        jCheckBox9.setBounds(90, 170, 13, 13);
 
-        jCheckBox10.setText("Generale LV4");
+        jCheckBox10.setBorder(null);
         jCheckBox10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox10ActionPerformed(evt);
             }
         });
+        jPanel2.add(jCheckBox10);
+        jCheckBox10.setBounds(90, 210, 13, 13);
 
-        jCheckBox11.setText("Commando LV5");
+        jCheckBox11.setBorder(null);
         jCheckBox11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox11ActionPerformed(evt);
             }
         });
+        jPanel2.add(jCheckBox11);
+        jCheckBox11.setBounds(90, 250, 13, 13);
 
-        jCheckBox12.setText("Mostro Epico LV6");
+        jCheckBox12.setBorder(null);
         jCheckBox12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox12ActionPerformed(evt);
             }
         });
+        jPanel2.add(jCheckBox12);
+        jCheckBox12.setBounds(90, 290, 13, 13);
 
-        jCheckBox13.setText("Mosto Leggendario LV7");
+        jCheckBox13.setBorder(null);
         jCheckBox13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox13ActionPerformed(evt);
             }
         });
+        jPanel2.add(jCheckBox13);
+        jCheckBox13.setBounds(90, 330, 13, 13);
 
         jButton5.setText("Seleziona Tutto");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -455,6 +435,8 @@ public class guiDDtools extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton5);
+        jButton5.setBounds(379, 124, 149, 23);
 
         jButton6.setText("Deseleziona Tutto");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -462,6 +444,8 @@ public class guiDDtools extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton6);
+        jButton6.setBounds(379, 153, 149, 23);
 
         jButton7.setText("Sorteggia");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -469,80 +453,55 @@ public class guiDDtools extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton7);
+        jButton7.setBounds(379, 282, 149, 23);
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(240, 240, 240));
         jLabel6.setText("Numero di mostri:");
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(350, 240, 110, 30);
+        jPanel2.add(jSpinner2);
+        jSpinner2.setBounds(467, 244, 61, 20);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox9)
-                    .addComponent(jCheckBox7)
-                    .addComponent(jCheckBox10)
-                    .addComponent(jCheckBox11)
-                    .addComponent(jCheckBox12)
-                    .addComponent(jCheckBox13)
-                    .addComponent(jCheckBox8))
-                .addGap(159, 159, 159)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(74, 74, 74)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jCheckBox7)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jCheckBox8)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCheckBox9)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCheckBox10)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCheckBox11)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCheckBox12)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCheckBox13))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addComponent(jButton5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton6)
-                                .addGap(68, 68, 68)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton7))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(109, Short.MAX_VALUE))
-        );
+        jLabel32.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel32.setText("Mostro Leggendario LV7");
+        jPanel2.add(jLabel32);
+        jLabel32.setBounds(110, 330, 170, 14);
+
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setText("Guardia LV1");
+        jPanel2.add(jLabel34);
+        jLabel34.setBounds(110, 90, 120, 14);
+
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("Soldato LV2");
+        jPanel2.add(jLabel33);
+        jLabel33.setBounds(110, 130, 110, 14);
+
+        jLabel35.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel35.setText("Soldato Elite LV3");
+        jPanel2.add(jLabel35);
+        jLabel35.setBounds(110, 170, 140, 14);
+
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("Generale LV4");
+        jPanel2.add(jLabel36);
+        jLabel36.setBounds(110, 210, 120, 14);
+
+        jLabel37.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel37.setText("Commando LV5");
+        jPanel2.add(jLabel37);
+        jLabel37.setBounds(110, 250, 120, 14);
+
+        jLabel38.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel38.setText("Mostro Epico LV6");
+        jPanel2.add(jLabel38);
+        jLabel38.setBounds(110, 290, 140, 14);
+
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dndtools/wallpaper.jpg"))); // NOI18N
+        jPanel2.add(jLabel39);
+        jLabel39.setBounds(0, 0, 900, 500);
 
         jTabbedPane1.addTab("Mostri", jPanel2);
 
@@ -652,7 +611,7 @@ public class guiDDtools extends javax.swing.JFrame {
         jTextField13.setBorder(null);
         jPanel5.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 40, 20));
 
-        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, 300, 320));
+        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 80, 300, 320));
 
         jPanel6.setBackground(new java.awt.Color(0, 51, 102));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -741,7 +700,7 @@ public class guiDDtools extends javax.swing.JFrame {
         jLabel8.setText("INSERISCI LE PERCENTUALI PER GLI OGGETTI");
         jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 310, 330));
+        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 310, 330));
 
         jPanel7.setBackground(new java.awt.Color(46, 52, 121));
         jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -772,7 +731,7 @@ public class guiDDtools extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 230, 70));
+        jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 230, 70));
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 46));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -803,7 +762,7 @@ public class guiDDtools extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 230, 70));
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 230, 70));
 
         jLabel12.setFont(new java.awt.Font("Bodoni MT", 0, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -1169,6 +1128,7 @@ public class guiDDtools extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1191,6 +1151,14 @@ public class guiDDtools extends javax.swing.JFrame {
     protected static javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
