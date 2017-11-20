@@ -33,6 +33,7 @@ public class DnDTools {
     protected static guiDDtools main;
     protected static String path="";
     protected static int slot=0;
+   
     
     protected static int oggetti_rarità1[]=new int[2];;
     protected static int oggetti_rarità2[]=new int[2];;
@@ -58,12 +59,14 @@ public class DnDTools {
     {
         FileReader file;
         BufferedReader buff;
+        
         try
         {
              file = new FileReader("valori_utente.txt");
              buff = new BufferedReader(file);
              set_oggetti_mostri(buff);
              
+            System.out.println("Chiudo nel try");
             file.close();
             buff.close();
              
@@ -74,16 +77,19 @@ public class DnDTools {
              file = new FileReader("valori_default.txt");
              buff = new BufferedReader(file);
              set_oggetti_mostri(buff);
-             
+            
+            System.out.println("Chiudo nel catch");
             file.close();
             buff.close();
              
              a.printStackTrace();
         }
         catch (Exception e)
-        {
+        {   
+            System.out.println("non Chiudo");
             e.printStackTrace();
         }
+
         
         
        
@@ -97,16 +103,15 @@ public class DnDTools {
         {
             while(true)
             {
-             
-              if(str==null)
-                break;
-              else
-              {             
+                              
                 str=buff.readLine();
-              
+                
+                if(str==null)
+                   break;
+                            
                 if(!str.equals("Oggetti") && !str.equals("Mostri") && !str.equals(""))
                   calcola_percentuali(i, Integer.parseInt(str));
-              }
+              
               
                          
               i++;
@@ -121,85 +126,85 @@ public class DnDTools {
     
     protected static void calcola_percentuali(int riga,int percentuale)
     {
-        System.out.println("i=" + riga + " " + percentuale + "%");
+       // System.out.println("i=" + riga + " " + percentuale + "%");
         
         if(riga==1)
         {
             oggetti_rarità1[0]=0;
             oggetti_rarità1[1]=oggetti_rarità1[0]+(percentuale-1);
-            System.out.println(oggetti_rarità1[0] + " " + oggetti_rarità1[1]);
+           // System.out.println(oggetti_rarità1[0] + " " + oggetti_rarità1[1]);
         }
         else if (riga==2)
         {
             oggetti_rarità2[0]=oggetti_rarità1[1]+1;
             oggetti_rarità2[1]=oggetti_rarità2[0]+(percentuale-1);
-            System.out.println(oggetti_rarità2[0] + " " + oggetti_rarità2[1]);
+         //   System.out.println(oggetti_rarità2[0] + " " + oggetti_rarità2[1]);
         }
         else if(riga==3)
         {
             oggetti_rarità3[0]=oggetti_rarità2[1]+1;
             oggetti_rarità3[1]=oggetti_rarità3[0]+(percentuale-1);
-            System.out.println(oggetti_rarità3[0] + " " + oggetti_rarità3[1]);
+          //  System.out.println(oggetti_rarità3[0] + " " + oggetti_rarità3[1]);
         }
         else if (riga == 4)
         {
             oggetti_rarità4[0]=oggetti_rarità3[1]+1;
             oggetti_rarità4[1]=oggetti_rarità4[0]+(percentuale-1);
-            System.out.println(oggetti_rarità4[0] + " " + oggetti_rarità4[1]);
+         //   System.out.println(oggetti_rarità4[0] + " " + oggetti_rarità4[1]);
         }
         else if(riga==5)
         {
             oggetti_rarità5[0]=oggetti_rarità4[1]+1;
             oggetti_rarità5[1]=oggetti_rarità5[0]+(percentuale-1);
-            System.out.println(oggetti_rarità5[0] + " " + oggetti_rarità5[1]);
+          //  System.out.println(oggetti_rarità5[0] + " " + oggetti_rarità5[1]);
         }
         else if (riga==6)
         {
             oggetti_rarità6[0]=oggetti_rarità5[1]+1;
             oggetti_rarità6[1]=oggetti_rarità6[0]+(percentuale);
-            System.out.println(oggetti_rarità6[0] + " " + oggetti_rarità6[1]);
+         //   System.out.println(oggetti_rarità6[0] + " " + oggetti_rarità6[1]);
         }
         else if (riga == 9)
         {
              mostrolvl1[0]=0;
              mostrolvl1[1]=mostrolvl1[0]+(percentuale-1);
-              System.out.println("OGGETTI\n" + mostrolvl1[0] + " " + mostrolvl1[1]);
+           //   System.out.println("OGGETTI\n" + mostrolvl1[0] + " " + mostrolvl1[1]);
         }
         else if (riga == 10)
         {
             mostrolvl2[0]=mostrolvl1[1]+1;
             mostrolvl2[1]=mostrolvl2[0]+(percentuale-1);
-            System.out.println(mostrolvl2[0] + " " + mostrolvl2[1]);
+          //  System.out.println(mostrolvl2[0] + " " + mostrolvl2[1]);
         }
         else if (riga == 11)
         {
             mostrolvl3[0]=mostrolvl2[1]+1;
             mostrolvl3[1]=mostrolvl3[0]+(percentuale-1);
-            System.out.println(mostrolvl3[0] + " " + mostrolvl3[1]);
+        //    System.out.println(mostrolvl3[0] + " " + mostrolvl3[1]);
         }
         else if (riga == 12)
         {
             mostrolvl4[0]=mostrolvl3[1]+1;
             mostrolvl4[1]=mostrolvl4[0]+(percentuale-1);
-            System.out.println(mostrolvl4[0] + " " + mostrolvl4[1]);
+          //  System.out.println(mostrolvl4[0] + " " + mostrolvl4[1]);
         }
         else if (riga == 13)
         {
             mostrolvl5[0]=mostrolvl4[1]+1;
             mostrolvl5[1]=mostrolvl5[0]+(percentuale-1);
-            System.out.println(mostrolvl5[0] + " " + mostrolvl5[1]);
+         //   System.out.println(mostrolvl5[0] + " " + mostrolvl5[1]);
         }
         else if (riga == 14)
         {
             mostrolvl6[0]=mostrolvl5[1]+1;
             mostrolvl6[1]=mostrolvl6[0]+(percentuale-1);
-            System.out.println(mostrolvl6[0] + " " + mostrolvl6[1]);
+         //   System.out.println(mostrolvl6[0] + " " + mostrolvl6[1]);
         }
         else if (riga == 15)
         {
             mostrolvl7[0]=mostrolvl6[1]+1;
             mostrolvl7[1]=mostrolvl7[0]+(percentuale);
-            System.out.println(mostrolvl7[0] + " " + mostrolvl7[1]);
+         //   System.out.println(mostrolvl7[0] + " " + mostrolvl7[1]);
         }
     }
     
@@ -227,6 +232,9 @@ public class DnDTools {
          scrivi.println(guiDDtools.jTextField12.getText());
          scrivi.println(guiDDtools.jTextField13.getText());
          scrivi.println(guiDDtools.jTextField7.getText());
+         
+         scrivi.close();
+         path.close();
         }
         catch(Exception e)
         {
